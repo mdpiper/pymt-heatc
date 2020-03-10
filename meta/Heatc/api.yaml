@@ -1,0 +1,4 @@
+name: heatc
+language: c
+package: heatc
+class: Heatc
