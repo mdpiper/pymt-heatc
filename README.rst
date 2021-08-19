@@ -10,23 +10,25 @@ pymt_heatc
 .. image:: https://img.shields.io/badge/recipe-pymt_heatc-green.svg
         :target: https://anaconda.org/conda-forge/pymt_heatc
 
-.. image:: https://img.shields.io/travis/mdpiper/pymt_heatc.svg
-        :target: https://travis-ci.org/mdpiper/pymt_heatc
-
-.. image:: https://readthedocs.org/projects/pymt_heatc/badge/?version=latest
-        :target: https://pymt_heatc.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/pymt-heatc/badge/?version=latest
+        :target: https://pymt-heatc.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-        :target: https://github.com/csdms/pymt
-        :alt: Code style: black
+.. image:: https://github.com/pymt-lab/pymt_heatc/actions/workflows/test.yml/badge.svg
+        :target: https://github.com/pymt-lab/pymt_heatc/actions/workflows/test.yml
+
+.. image:: https://github.com/pymt-lab/pymt_heatc/actions/workflows/flake8.yml/badge.svg
+        :target: https://github.com/pymt-lab/pymt_heatc/actions/workflows/flake8.yml
+
+.. image:: https://github.com/pymt-lab/pymt_heatc/actions/workflows/black.yml/badge.svg
+        :target: https://github.com/pymt-lab/pymt_heatc/actions/workflows/black.yml
 
 
-PyMT plugin for heatc
+PyMT plugin for heatc model
 
 
-* Free software: MIT license
-* Documentation: https://heatc.readthedocs.io.
+* Free software: MIT License
+* Documentation: https://pymt-heatc.readthedocs.io.
 
 
 
@@ -34,7 +36,7 @@ PyMT plugin for heatc
 ========= ===================================
 Component PyMT
 ========= ===================================
-Heatc     `from pymt.models import Heatc`
+HeatModel `from pymt.models import HeatModel`
 ========= ===================================
 
 ---------------
@@ -53,7 +55,7 @@ into which to install it. This can be done with,
 
 .. code::
 
-  conda create -n pymt python=3.6
+  conda create -n pymt python=3
   conda activate pymt
 
 Once the `conda-forge` channel has been enabled, `pymt` can be installed with:
@@ -72,12 +74,7 @@ It is possible to list all of the versions of `pymt` available on your platform 
 Installing pymt_heatc
 ---------------------
 
-Once `pymt` is installed, the dependencies of `pymt_heatc` can
-be installed with:
 
-.. code::
-
-  conda install bmi-c=2.0
 
 To install `pymt_heatc`,
 

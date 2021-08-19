@@ -1,11 +1,11 @@
 #! /usr/bin/env python
+import pkg_resources
 
-from .bmi import (Heatc,
-)
+__version__ = pkg_resources.get_distribution("pymt_heatc").version
 
-__all__ = ["Heatc",
+
+from .bmi import HeatModel
+
+__all__ = [
+    "HeatModel",
 ]
-
-from ._version import get_versions
-__version__ = get_versions()['version']
-del get_versions
