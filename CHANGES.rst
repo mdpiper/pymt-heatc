@@ -4,6 +4,8 @@ Changelog for pymt_heatc
 0.2.0 (unreleased)
 -------------------
 
+- Add metadata files from babelizer C example
+
 - Rerender with babelizer v0.3.8
 
 
