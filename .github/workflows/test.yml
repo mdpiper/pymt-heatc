@@ -63,3 +63,12 @@ jobs:
         run: |
           python -c 'import pymt_heatc'
           bmi-test pymt_heatc.bmi:HeatModel -vvv
+
+      - name: Install example dependencies
+        run: mamba install pymt
+
+      - name: Run examples
+        working-directory: ${{ github.workspace }}/examples
+        run: |
+          python heatc_ex.py
+          python pymt_heatc_ex.py
