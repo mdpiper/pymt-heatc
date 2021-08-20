@@ -1,4 +1,1 @@
-cython
 numpy
-model_metadata
-bmi-c=2.0

@@ -20,11 +20,9 @@ requirements:
     - cython
     - numpy 1.11.*
     - model_metadata
-    - bmi-c=2.0 
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - bmi-c=2.0 
 
 test:
   requires:
@@ -33,12 +31,12 @@ test:
   imports:
     - pymt_heatc
   commands:
-    - config_file=$(mmd-stage Heatc . > MANIFEST && mmd-query Heatc --var=run.config_file.path)
-    - bmi-test pymt_heatc.bmi:Heatc --config-file=$config_file --manifest=MANIFEST -v
+    - config_file=$(mmd-stage HeatModel . > MANIFEST && mmd-query HeatModel --var=run.config_file.path)
+    - bmi-test pymt_heatc.bmi:HeatModel --config-file=$config_file --manifest=MANIFEST -v
 
 about:
-  summary: Python package that wraps the heatc BMI.
-  home: https://github.com/mdpiper/pymt_heatc
-  license: MIT license
+  summary: Python package that wraps the C Heat model BMI.
+  home: https://github.com/pymt-lab/pymt_heatc
+  license: MIT License
   license_file: LICENSE
-  dev_url: https://github.com/mdpiper/pymt_heatc
+  dev_url: https://github.com/pymt-lab/pymt_heatc
