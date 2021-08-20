@@ -1,3 +1,4 @@
-
 bmi-c
 c-compiler
+pkg-config
+cmake
