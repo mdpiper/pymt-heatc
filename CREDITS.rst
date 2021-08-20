@@ -1,4 +1,4 @@
 Credits
 =======
 
-* CSDMS <csdms@colorado.edu>
+* Mark Piper <mark.piper@colorado.edu>
