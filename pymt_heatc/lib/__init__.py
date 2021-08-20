@@ -2,6 +2,6 @@
 
 from .heatmodel import HeatModel
 
-
-__all__ = ["HeatModel",
+__all__ = [
+    "HeatModel",
 ]
