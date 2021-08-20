@@ -5,7 +5,7 @@ Changelog for pymt_heatc
 -------------------
 
 - Add metadata files from babelizer C example
-
+- Add examples of running BMI and through pymt
 - Rerender with babelizer v0.3.8
 
 
