@@ -56,7 +56,7 @@ setup(
     author_email="csdms@colorado.edu",
     description="PyMT plugin for pymt_heatc",
     long_description=long_description,
-    version="0.2.dev0",
+    version="0.2",
     url="https://github.com/pymt-lab/pymt_heatc",
     classifiers=[
         "Development Status :: 4 - Beta",

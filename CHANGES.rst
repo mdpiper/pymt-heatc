@@ -1,8 +1,8 @@
 Changelog for pymt_heatc
 ========================
 
-0.2.0 (unreleased)
--------------------
+0.2 (2021-08-20)
+----------------
 
 - Add metadata files from babelizer C example
 - Add examples of running BMI and through pymt
