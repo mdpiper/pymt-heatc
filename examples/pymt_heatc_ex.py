@@ -1,13 +1,13 @@
 """Run the heatc model in pymt."""
 import numpy as np
-from pymt.models import HeatModel
+from pymt.models import HeatModelC
 
 
 np.set_printoptions(formatter={"float": "{: 6.2f}".format})
 
 
 # Instantiate the component and get its name.
-m = HeatModel()
+m = HeatModelC()
 print(m.name)
 
 # Call setup, then initialize the model.

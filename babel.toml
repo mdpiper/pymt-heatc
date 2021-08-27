@@ -1,9 +1,10 @@
 [library]
-[library.HeatModel]
+[library.HeatModelC]
 language = "c"
 library = "bmiheatc"
 header = "bmi_heat.h"
 entry_point = "register_bmi_heat"
+
 
 
 [build]
@@ -24,6 +25,7 @@ package_author = "csdms"
 package_author_email = "csdms@colorado.edu"
 package_license = "MIT"
 summary = "PyMT plugin for heatc model"
+
 
 
 [ci]

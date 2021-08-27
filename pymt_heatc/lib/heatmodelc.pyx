@@ -89,17 +89,17 @@ def ok_or_raise(status):
     if status != 0:
         raise RuntimeError('error code {status}'.format(status=status))
 
-# start: heatmodel.pyx
+# start: heatmodelc.pyx
 
 cdef extern from "bmi_heat.h":
     Bmi* register_bmi_heat(Bmi *model)
 
 
-cdef class HeatModel:
+cdef class HeatModelC:
     cdef Bmi* _bmi
     cdef char[2048] STR_BUFFER
 
-    METADATA = "../data/HeatModel"
+    METADATA = "../data/HeatModelC"
 
     def __cinit__(self):
         self._bmi = <Bmi*>malloc(sizeof(Bmi))

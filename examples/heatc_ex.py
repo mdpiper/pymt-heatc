@@ -1,6 +1,6 @@
 """Run the heatc model through its BMI in Python."""
 import numpy as np
-from pymt_heatc import HeatModel
+from pymt_heatc import HeatModelC
 
 
 config_file = "config.txt"
@@ -8,7 +8,7 @@ np.set_printoptions(formatter={"float": "{: 6.2f}".format})
 
 
 # Instantiate and initialize the model.
-m = HeatModel()
+m = HeatModelC()
 print(m.get_component_name())
 m.initialize(config_file)
 
