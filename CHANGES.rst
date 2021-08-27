@@ -4,7 +4,7 @@ Changelog for pymt_heatc
 0.3 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Standardize BMI and pymt examples (#2)
 
 
 0.2 (2021-08-20)

@@ -3,7 +3,7 @@ import numpy as np
 from pymt.models import HeatModel
 
 
-np.set_printoptions(formatter={"float": "{: 6.3f}".format})
+np.set_printoptions(formatter={"float": "{: 6.2f}".format})
 
 
 # Instantiate the component and get its name.
@@ -13,7 +13,13 @@ print(m.name)
 # Call setup, then initialize the model.
 args = m.setup(".")
 m.initialize(*args)
-# m.initialize("config.txt", dir=".")
+
+# Get time information from the model.
+print("Start time:", m.start_time)
+print("End time:", m.end_time)
+print("Current time:", m.time)
+print("Time step:", m.time_step)
+print("Time units:", m.time_units)
 
 # List the model's exchange items.
 print("Number of input vars:", len(m.input_var_names))
@@ -37,37 +43,38 @@ grid_id = m.var_grid(var_name)
 print(" - grid id:", grid_id)
 print(" - grid type:", m.grid_type(grid_id))
 print(" - rank:", m.grid_ndim(grid_id))
-# print(" - size:", m.grid_node_count(grid_id))
+grid_size = m.grid_node_count(grid_id)
+print(" - size:", grid_size)
 print(" - shape:", m.grid_shape(grid_id))
-
-# Get time information from the model.
-print("Start time:", m.start_time)
-print("End time:", m.end_time)
-print("Current time:", m.time)
-print("Time step:", m.time_step)
-print("Time units:", m.time_units)
 
 # Get the initial values of the variable.
 print("Get initial values of {}...".format(var_name))
-val = m.var[var_name].data
 print(" - values, flattened:")
-print(val)
+print(m.var[var_name].data)
 print(" - values, redimensionalized:")
-print(val.reshape(m.grid_shape(grid_id)))
+print(m.var[var_name].data.reshape(m.grid_shape(grid_id)))
+
+# Set new values.
+print("Set new values of {}...".format(var_name))
+new = np.zeros(grid_size, dtype=float)
+new[20] = 10.0
+m.set_value(var_name, new)
+print(" - values, flattened:")
+print(m.var[var_name].data)
+print(" - values, redimensionalized:")
+print(m.var[var_name].data.reshape(m.grid_shape(grid_id)))
 
 # Advance the model by one time step.
 m.update()
 print("Update: current time:", m.time)
 print(" - values at time {}:".format(m.time))
-val = m.var[var_name].data
-print(val.reshape(m.grid_shape(grid_id)))
+print(m.var[var_name].data.reshape(m.grid_shape(grid_id)))
 
 # Advance the model until a later time.
 m.update_until(5.0)
 print("Update: current time:", m.time)
 print(" - values at time {}:".format(m.time))
-val = m.var[var_name].data
-print(val.reshape(m.grid_shape(grid_id)))
+print(m.var[var_name].data.reshape(m.grid_shape(grid_id)))
 
 # Finalize the model.
 m.finalize()

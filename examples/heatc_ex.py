@@ -4,13 +4,20 @@ from pymt_heatc import HeatModel
 
 
 config_file = "config.txt"
-np.set_printoptions(formatter={"float": "{: 6.3f}".format})
+np.set_printoptions(formatter={"float": "{: 6.2f}".format})
 
 
-# Instatiate an initialize the model.
+# Instantiate and initialize the model.
 m = HeatModel()
 print(m.get_component_name())
 m.initialize(config_file)
+
+# Get time information from the model.
+print("Start time:", m.get_start_time())
+print("End time:", m.get_end_time())
+print("Current time:", m.get_current_time())
+print("Time step:", m.get_time_step())
+print("Time units:", m.get_time_units())
 
 # List the model's exchange items.
 print("Input vars:", m.get_input_var_names())
@@ -42,7 +49,7 @@ print(" - units:", m.get_var_units(var_name))
 print(" - itemsize:", m.get_var_itemsize(var_name))
 print(" - nbytes:", m.get_var_nbytes(var_name))
 
-# Get the initial temperature values.
+# View default initial temperature values.
 val = np.empty(grid_size, dtype=float)
 m.get_value(var_name, val)
 print(" - initial values (flattened):")
@@ -50,12 +57,16 @@ print(val)
 print(" - initial values (gridded):")
 print(val.reshape(grid_shape))
 
-# Get time information from the model.
-print("Start time:", m.get_start_time())
-print("End time:", m.get_end_time())
-print("Current time:", m.get_current_time())
-print("Time step:", m.get_time_step())
-print("Time units:", m.get_time_units())
+# Set new initial temperature values.
+new = np.zeros(grid_size, dtype=float)
+new[20] = 10.0
+m.set_value(var_name, new)
+val = np.empty(grid_size, dtype=float)
+m.get_value(var_name, val)
+print(" - new initial values (flattened):")
+print(val)
+print(" - new initial values (gridded):")
+print(val.reshape(grid_shape))
 
 # Advance the model by one time step.
 m.update()
