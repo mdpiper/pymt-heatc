@@ -49,15 +49,23 @@ print(" - units:", m.get_var_units(var_name))
 print(" - itemsize:", m.get_var_itemsize(var_name))
 print(" - nbytes:", m.get_var_nbytes(var_name))
 
-# Set the initial temperature values.
-new = np.zeros(grid_size, dtype=float)
-new[20] = 10.0
-m.set_value(var_name, new)
+# View default initial temperature values.
 val = np.empty(grid_size, dtype=float)
 m.get_value(var_name, val)
 print(" - initial values (flattened):")
 print(val)
 print(" - initial values (gridded):")
+print(val.reshape(grid_shape))
+
+# Set new initial temperature values.
+new = np.zeros(grid_size, dtype=float)
+new[20] = 10.0
+m.set_value(var_name, new)
+val = np.empty(grid_size, dtype=float)
+m.get_value(var_name, val)
+print(" - new initial values (flattened):")
+print(val)
+print(" - new initial values (gridded):")
 print(val.reshape(grid_shape))
 
 # Advance the model by one time step.
