@@ -33,11 +33,11 @@ PyMT plugin for heatc model
 
 
 
-========= ===================================
-Component PyMT
-========= ===================================
-HeatModel `from pymt.models import HeatModel`
-========= ===================================
+========== ====================================
+Component  PyMT
+========== ====================================
+HeatModelC `from pymt.models import HeatModelC`
+========== ====================================
 
 ---------------
 Installing pymt

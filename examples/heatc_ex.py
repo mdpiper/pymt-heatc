@@ -1,6 +1,6 @@
 """Run the heatc model through its BMI in Python."""
 import numpy as np
-from pymt_heatc import HeatModel
+from pymt_heatc import HeatModelC
 
 
 config_file = "config.txt"
@@ -8,7 +8,7 @@ np.set_printoptions(formatter={"float": "{: 6.2f}".format})
 
 
 # Instantiate and initialize the model.
-m = HeatModel()
+m = HeatModelC()
 print(m.get_component_name())
 m.initialize(config_file)
 
@@ -48,6 +48,7 @@ print(" - variable type:", m.get_var_type(var_name))
 print(" - units:", m.get_var_units(var_name))
 print(" - itemsize:", m.get_var_itemsize(var_name))
 print(" - nbytes:", m.get_var_nbytes(var_name))
+print(" - location:", m.get_var_location(var_name))
 
 # View default initial temperature values.
 val = np.empty(grid_size, dtype=float)
@@ -76,6 +77,14 @@ m.get_value(var_name, val)
 print(" - updated values (gridded):")
 print(val.reshape(grid_shape))
 
+# # Get a reference to the temperature values and check that it updates.
+# print(" - values (by ref, gridded) at time {}:".format(m.get_current_time()))
+# ref = m.get_value_ptr(var_name)
+# print(ref.reshape(grid_shape))
+# m.update()
+# print(" - values (by ref, gridded) at time {}:".format(m.get_current_time()))
+# print(ref.reshape(grid_shape))
+
 # Advance the model until a later time.
 m.update_until(5.0)
 print("Later time:", m.get_current_time())
@@ -83,6 +92,7 @@ val = np.empty(grid_size, dtype=float)
 m.get_value(var_name, val)
 print(" - updated values (gridded):")
 print(val.reshape(grid_shape))
+# print(ref.reshape(grid_shape))
 
 # Finalize the model.
 m.finalize()

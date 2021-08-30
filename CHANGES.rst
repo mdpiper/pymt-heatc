@@ -5,6 +5,7 @@ Changelog for pymt_heatc
 ----------------
 
 - Standardize BMI and pymt examples (#2)
+- Rename component from HeatModel to HeatModelC (#3)
 
 
 0.2 (2021-08-20)

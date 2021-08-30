@@ -31,8 +31,8 @@ test:
   imports:
     - pymt_heatc
   commands:
-    - config_file=$(mmd-stage HeatModel . > MANIFEST && mmd-query HeatModel --var=run.config_file.path)
-    - bmi-test pymt_heatc.bmi:HeatModel --config-file=$config_file --manifest=MANIFEST -v
+    - config_file=$(mmd-stage HeatModelC . > MANIFEST && mmd-query HeatModelC --var=run.config_file.path)
+    - bmi-test pymt_heatc.bmi:HeatModelC --config-file=$config_file --manifest=MANIFEST -v
 
 about:
   summary: Python package that wraps the C Heat model BMI.
