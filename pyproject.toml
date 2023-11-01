@@ -4,7 +4,7 @@ requires = ['meson-python', 'cython', 'numpy']
 
 [project]
 name = "pymt_heatc"
-description = "PyMT plugin for heatc model"
+description = "PyMT plugin for HeatC model"
 version = "0.3.dev0"
 readme = "README.rst"
 authors = [
@@ -54,8 +54,8 @@ build = [
 [project.urls]
 homepage = "https://csdms.colorado.edu"
 documentation = "https://csdms.colorado.edu"
-repository = "https://github.com/mdpiper/pymt_heatf"
-changelog = "https://github.com/mdpiper/pymt_heatf/blob/main/CHANGES.rst"
+repository = "https://github.com/mdpiper/pymt_heatc"
+changelog = "https://github.com/mdpiper/pymt_heatc/blob/main/CHANGES.rst"
 
 [project.entry-points."pymt.plugins"]
 HeatModelC = "pymt_heatc.bmi:HeatModelC"
