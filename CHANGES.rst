@@ -1,7 +1,13 @@
 Changelog for pymt_heatc
 ========================
 
-0.3 (unreleased)
+0.4 (unreleased)
+----------------
+
+- Rebuild project with Meson (#6)
+
+
+0.3 (2021-09-01)
 ----------------
 
 - Standardize BMI and pymt examples (#2)
