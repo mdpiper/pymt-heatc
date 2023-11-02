@@ -1,6 +1,12 @@
 Changelog for pymt_heatc
 ========================
 
+0.5 (unreleased)
+----------------
+
+- Nothing changed yet.
+
+
 0.4 (2023-11-02)
 ----------------
 
