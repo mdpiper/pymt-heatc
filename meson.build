@@ -1,4 +1,4 @@
-project('pymt_heatc', 'c', 'cython', version: '0.3.dev0')
+project('pymt_heatc', 'c', 'cython', version: '0.4')
 
 py = import('python').find_installation(pure: false)
 
