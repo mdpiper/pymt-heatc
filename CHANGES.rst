@@ -1,7 +1,7 @@
 Changelog for pymt_heatc
 ========================
 
-0.4 (unreleased)
+0.4 (2023-11-02)
 ----------------
 
 - Rebuild project with Meson (#6)

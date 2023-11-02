@@ -5,7 +5,7 @@ requires = ['meson-python', 'cython', 'numpy']
 [project]
 name = "pymt_heatc"
 description = "PyMT plugin for HeatC model"
-version = "0.3.dev0"
+version = "0.4"
 readme = "README.rst"
 authors = [
   {email = "mark.piper@colorado.edu"},
