@@ -2,82 +2,33 @@
 pymt_heatc
 ==========
 
+This is an example of building a model,
+written in C and wrapped in Python with the `babelizer <https://github.com/csdms/babelizer>`_,
+with the `meson-python <https://meson-python.readthedocs.io/en/latest/>`_ build system
+using a ``pyproject.toml`` file to describe the build.
 
-.. image:: https://img.shields.io/badge/CSDMS-Basic%20Model%20Interface-green.svg
-        :target: https://bmi.readthedocs.io/
-        :alt: Basic Model Interface
+Build/Install
+-------------
 
-.. image:: https://img.shields.io/badge/recipe-pymt_heatc-green.svg
-        :target: https://anaconda.org/conda-forge/pymt_heatc
+This is a sketch of how to build and install this project.
 
-.. image:: https://readthedocs.org/projects/pymt-heatc/badge/?version=latest
-        :target: https://pymt-heatc.readthedocs.io/en/latest/?badge=latest
-        :alt: Documentation Status
+1. Create the conda environment from `environment.yml` and activate it.
+2. Build/install the `C BMI example <https://github.com/csdms/bmi-example-c/#buildinstall>`_
+3. Build/install this project with ``make install``
 
-.. image:: https://github.com/mdpiper/pymt_heatc/actions/workflows/test.yml/badge.svg
-        :target: https://github.com/mdpiper/pymt_heatc/actions/workflows/test.yml
+Use
+---
 
-.. image:: https://github.com/mdpiper/pymt_heatc/actions/workflows/flake8.yml/badge.svg
-        :target: https://github.com/mdpiper/pymt_heatc/actions/workflows/flake8.yml
+Import the standalone project into a Python session:
 
-.. image:: https://github.com/mdpiper/pymt_heatc/actions/workflows/black.yml/badge.svg
-        :target: https://github.com/mdpiper/pymt_heatc/actions/workflows/black.yml
+.. code-block:: python
 
+    >>> import pymt_heatc
 
-PyMT plugin for heatc model
+Import the *pymt* component:
 
+.. code-block:: python
 
-* Free software: MIT License
-* Documentation: https://pymt-heatc.readthedocs.io.
+    >>> from pymt.MODELS import HeatModelC
 
-
-
-
-========== ====================================
-Component  PyMT
-========== ====================================
-HeatModelC `from pymt.models import HeatModelC`
-========== ====================================
-
----------------
-Installing pymt
----------------
-
-Installing `pymt` from the `conda-forge` channel can be achieved by adding
-`conda-forge` to your channels with:
-
-.. code::
-
-  conda config --add channels conda-forge
-
-*Note*: Before installing `pymt`, you may want to create a separate environment
-into which to install it. This can be done with,
-
-.. code::
-
-  conda create -n pymt python=3
-  conda activate pymt
-
-Once the `conda-forge` channel has been enabled, `pymt` can be installed with:
-
-.. code::
-
-  conda install pymt
-
-It is possible to list all of the versions of `pymt` available on your platform with:
-
-.. code::
-
-  conda search pymt --channel conda-forge
-
----------------------
-Installing pymt_heatc
----------------------
-
-
-
-To install `pymt_heatc`,
-
-.. code::
-
-  conda install pymt_heatc
+Try the examples in the `examples` directory.
