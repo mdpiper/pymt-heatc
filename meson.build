@@ -1,4 +1,8 @@
-project('pymt_heatc', 'c', 'cython', version: '0.4')
+project(
+    'pymt_heatc',
+    'c', 'cython',
+    license: 'MIT',
+)
 
 py = import('python').find_installation(pure: false)
 
@@ -20,7 +24,8 @@ incs = include_directories(
 )
 
 deps = [
-    dependency('bmiheatc')
+    dependency('bmiheatc'),
+    py.dependency(),
 ]
 
 srcs = [
@@ -60,4 +65,4 @@ py.extension_module(
 )
 
 # This is a temporary fix for editable installs.
-run_command('cp', '-r', meson.project_name() / 'data', 'build')
+run_command('cp', '-r', meson.project_name() / 'data', 'build', check: false)
