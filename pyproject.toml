@@ -4,9 +4,9 @@ requires = ['meson-python', 'cython', 'numpy']
 
 [project]
 name = "pymt_heatc"
-description = "PyMT plugin for HeatC model"
+description = "PyMT plugin for the HeatModelC model"
 version = "0.5.dev0"
-readme = "README.rst"
+readme = "README.md"
 authors = [
   {email = "mark.piper@colorado.edu"},
   {name = "Mark Piper"}
@@ -25,15 +25,14 @@ classifiers = [
   "License :: OSI Approved :: MIT License",
   "Operating System :: OS Independent",
   "Programming Language :: Cython",
-  "Programming Language :: Python :: 3.9",
-  "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: Implementation :: CPython",
   "Topic :: Scientific/Engineering :: Physics",
 ]
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 dependencies = [
   "bmipy",
   "numpy",
