@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-from .bmi import HeatModelC
+from ._bmi import HeatModelC
 
 __all__ = [
     "HeatModelC",

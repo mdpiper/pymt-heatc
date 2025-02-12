@@ -64,7 +64,7 @@ pretty:
 	black . --check
 
 test: ## run tests quickly with the default Python
-	bmi-test pymt_heatc.bmi:HeatModelC -vvv
+	bmi-test pymt_heatc._bmi:HeatModelC -vvv
 
 test-all: ## run tests on every Python version with tox
 	tox

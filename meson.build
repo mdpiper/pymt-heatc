@@ -35,7 +35,7 @@ srcs = [
 # Files get copied to <python directory>/site-packages/<subdir>
 install_pkg_srcs = [
     meson.project_name() / '__init__.py',
-    meson.project_name() / 'bmi.py',
+    meson.project_name() / '_bmi.py',
 ]
 py.install_sources(
     install_pkg_srcs,
