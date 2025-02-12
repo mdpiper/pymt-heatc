@@ -1,6 +1,4 @@
-from __future__ import absolute_import
-
-from .lib import HeatModelC
+from pymt_heatc.lib import HeatModelC
 
 __all__ = [
     "HeatModelC",
