@@ -108,11 +108,10 @@ jobs:
           python -c 'import pymt_heatc'
           python -c 'from pymt.models import HeatModelC'
 
-      # Weird Windows stuff here. If the examples in the next step run to completion, the BMI works.
-      # - name: Test BMI
-      #   working-directory: ${{ github.workspace }}
-      #   run: |
-      #     bmi-test pymt_heatf._bmi:HeatModelF --config-file=${{ github.workspace }}\examples\test.cfg --root-dir=examples -vvv
+      - name: Test BMI
+        working-directory: ${{ github.workspace }}
+        run: |
+          make test
 
       - name: Run examples
         working-directory: ${{ github.workspace }}/examples
