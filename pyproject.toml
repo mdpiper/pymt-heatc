@@ -59,7 +59,7 @@ build = [
 
 [project.urls]
 homepage = "https://csdms.colorado.edu"
-documentation = "https://csdms.colorado.edu"
+documentation = "https://pymt.readthedocs.io"
 repository = "https://github.com/mdpiper/pymt_heatc"
 changelog = "https://github.com/mdpiper/pymt_heatc/blob/main/CHANGES.rst"
 
@@ -73,9 +73,6 @@ ignore = [
 	"E203",
 	"E501",
 ]
-
-[tool.black]
-exclude = "docs"
 
 [tool.zest-releaser]
 tag-format = "v{version}"
