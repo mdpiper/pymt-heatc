@@ -1,4 +1,5 @@
 """Run the heatc model through its BMI in Python."""
+
 import numpy as np
 from pymt_heatc import HeatModelC
 

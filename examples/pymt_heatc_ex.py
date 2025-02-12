@@ -1,4 +1,5 @@
 """Run the heatc model in pymt."""
+
 import numpy as np
 from pymt.models import HeatModelC
 

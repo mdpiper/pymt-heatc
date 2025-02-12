@@ -38,7 +38,6 @@ clean-build: ## remove build artifacts
 	find . -name '*.egg' -exec rm -f {} +
 
 clean-compile: ## remove compilation artifacts
-	find . -name '*.c' -exec rm -f {} +
 	find . -name '*.mod' -exec rm -f {} +
 	find . -name '*.o' -exec rm -f {} +
 	find . -name '*.so' -exec rm -f {} +
@@ -64,7 +63,11 @@ pretty:
 	black . --check
 
 test: ## run tests quickly with the default Python
-	bmi-test pymt_heatc.bmi:HeatModelC -vvv
+	bmi-test pymt_heatc._bmi:HeatModelC \
+		--config-file=${PWD}/examples/config.txt \
+		--root-dir=examples \
+		--bmi-version="2.0" \
+		-vvv
 
 test-all: ## run tests on every Python version with tox
 	tox
@@ -83,4 +86,4 @@ dist: clean ## builds source and wheel package
 	ls -l dist
 
 install: clean ## install the package to the active Python's site-packages
-	pip install --no-build-isolation --editable .
+	python -m pip install . -v --no-build-isolation
