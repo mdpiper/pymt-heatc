@@ -38,7 +38,6 @@ clean-build: ## remove build artifacts
 	find . -name '*.egg' -exec rm -f {} +
 
 clean-compile: ## remove compilation artifacts
-	find . -name '*.c' -exec rm -f {} +
 	find . -name '*.mod' -exec rm -f {} +
 	find . -name '*.o' -exec rm -f {} +
 	find . -name '*.so' -exec rm -f {} +
