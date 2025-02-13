@@ -53,3 +53,69 @@ jobs:
         run: |
           python heatc_ex.py
           python pymt_heatc_ex.py
+
+  build-test-windows:
+    if:
+      github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
+
+    runs-on: windows-latest
+
+    env:
+      LIBRARY_PREFIX: $env:CONDA_PREFIX\Library
+
+    defaults:
+      run:
+        shell: pwsh
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - uses: ilammy/msvc-dev-cmd@v1
+
+      - uses: mamba-org/setup-micromamba@v2
+        with:
+          micromamba-version: latest
+          environment-file: environment.yml
+          init-shell: >-
+            powershell
+
+      # A link.exe installed by chocolatey was ahead of the MSVC link.exe in the path.
+      - name: Remove link.exe in the Git install
+        run: |
+          Remove-Item -Path "C:\Program Files\Git\usr\bin\link.exe" -Force
+
+      - name: View environment variables
+        run: |
+          ls env:
+
+      # The install prefix must be quoted.
+      - name: Configure, build, and install HeatModelC
+        run: |
+          pushd ./external/bmi-example-c
+          cmake -B _build -LA -G Ninja -DCMAKE_INSTALL_PREFIX="${{ env.LIBRARY_PREFIX }}" -DCMAKE_BUILD_TYPE=Release
+          cmake --build _build --target install --config Release
+          popd
+
+      - name: Build and install project
+        run: |
+          make install
+
+      - name: Test imports
+        working-directory: ${{ github.workspace }}/examples
+        run: |
+          python -c 'import pymt_heatc'
+          python -c 'from pymt.models import HeatModelC'
+
+      # Don't run bmi-test because Windows
+      # - name: Test BMI
+      #   working-directory: ${{ github.workspace }}
+      #   run: |
+      #     bmi-test pymt_heatf._bmi:HeatModelC --config-file=${{ github.workspace }}\examples\config.txt --root-dir=examples -vvv
+
+      - name: Run examples
+        working-directory: ${{ github.workspace }}/examples
+        run: |
+          python heatc_ex.py
+          python pymt_heatc_ex.py

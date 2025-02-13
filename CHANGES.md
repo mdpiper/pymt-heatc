@@ -2,7 +2,7 @@
 
 ## 0.5 (unreleased)
 
-- Nothing changed yet.
+- Fix the test CI workflow (#7)
 
 
 ## 0.4 (2023-11-02)
