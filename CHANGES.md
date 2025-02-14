@@ -1,5 +1,11 @@
 # Changelog for pymt_heatc
 
+## 0.6 (unreleased)
+
+
+- Nothing changed yet.
+
+
 ## 0.5 (2025-02-13)
 
 - Schedule monthly run for test CI workflow (#9)
