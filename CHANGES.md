@@ -2,6 +2,7 @@
 
 ## 0.5 (unreleased)
 
+- Schedule monthly run for test CI workflow (#9)
 - Run the CI test workflow on Windows (#8)
 - Fix the test CI workflow (#7)
 
